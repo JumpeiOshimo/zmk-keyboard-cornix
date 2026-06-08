@@ -133,6 +133,23 @@
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
         };
+// 1. タップで '['、Shift押下で ']' になる挙動
+        morph_bkt: bracket_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // 2. ホールドでShift（&kp）、タップで先ほどのmod-morph（&morph_bkt）を呼び出す挙動
+        ht_shift_bkt: hold_tap_shift_bracket {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred"; // 操作感に合わせて "tap-preferred" や "balanced" に変更可能です
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&morph_bkt>;
+        };
+
     };
 
     conditional_layers {
