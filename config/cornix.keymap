@@ -136,85 +136,113 @@
 
         // [数字行のズレ修正]
         // US 2 / @
+
         us_at: us_at {
             compatible = "zmk,behavior-mod-morph";
             label = "US_AT";
             #binding-cells = <0>;
             bindings = <&kp N2>, <&kp LBKT>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         // US 6 / ^
+
         us_caret: us_caret {
             compatible = "zmk,behavior-mod-morph";
             label = "US_CARET";
             #binding-cells = <0>;
             bindings = <&kp N6>, <&kp EQUAL>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         // US 7 / &
+
         us_amp: us_amp {
             compatible = "zmk,behavior-mod-morph";
             label = "US_AMP";
             #binding-cells = <0>;
             bindings = <&kp N7>, <&kp LS(N6)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         // US 8 / *
+
         us_asterisk: us_asterisk {
             compatible = "zmk,behavior-mod-morph";
             label = "US_ASTERISK";
             #binding-cells = <0>;
             bindings = <&kp N8>, <&kp LS(SQT)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         // US 9 / (
+
         us_lparen: us_lparen {
             compatible = "zmk,behavior-mod-morph";
             label = "US_LPAREN";
             #binding-cells = <0>;
             bindings = <&kp N9>, <&kp LS(N8)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         // US 0 / )
+
         us_rparen: us_rparen {
             compatible = "zmk,behavior-mod-morph";
             label = "US_RPAREN";
             #binding-cells = <0>;
             bindings = <&kp N0>, <&kp LS(N9)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // [右側記号キーのズレ修正]
         // US - / _
+
         us_minus: us_minus {
             compatible = "zmk,behavior-mod-morph";
             label = "US_MINUS";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp LS(INT_RO)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         // US = / +
+
         us_equal: us_equal {
             compatible = "zmk,behavior-mod-morph";
             label = "US_EQUAL";
             #binding-cells = <0>;
             bindings = <&kp LS(MINUS)>, <&kp LS(SEMI)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         // US ' / "
+
         us_quote: us_quote {
             compatible = "zmk,behavior-mod-morph";
             label = "US_QUOTE";
             #binding-cells = <0>;
             bindings = <&kp LS(N7)>, <&kp LS(N2)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         // US ` / ~
+
         us_grave: us_grave {
             compatible = "zmk,behavior-mod-morph";
             label = "US_GRAVE";
             #binding-cells = <0>;
             bindings = <&kp LS(LBKT)>, <&kp LS(EQUAL)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -223,6 +251,7 @@
             label = "US_SEMI";
             #binding-cells = <0>;
             bindings = <&kp SEMI>, <&kp SQT>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -231,7 +260,7 @@
         ht_shift_bkt: hold_tap_shift_bracket {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred"; 
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&kp>, <&morph_bkt>;
         };
@@ -333,10 +362,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                  &kp CARET      &kp AMPS      &kp ASTRK  &kp LPAR   &kp RPAR  &none
-&none  &none     &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC                   &kp MINUS      &kp UNDER     &kp MINUS  &kp PLUS   &kp DQT   &kp SQT
-&none  &none     &kp RBKT  &kp RPAR  &kp PIPE  &kp BSLH   &trans  &trans  &kp LS(MINUS)  &kp QUESTION  &kp GRAVE  &kp TILDE  &kp SQT   &none
-&none  &none     &none     &none     &trans    &trans                     &kp TILDE      &trans        &kp GRAVE  &none      &none     &none
+&none  &kp EXCL  &us_at    &kp HASH  &kp DLLR  &kp PRCNT                  &us_caret      &us_amp       &us_asterisk  &us_lparen  &us_rparen  &none
+&none  &none     &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC                   &kp MINUS      &kp UNDER     &kp MINUS     &kp PLUS    &kp DQT     &kp SQT
+&none  &none     &kp RBKT  &kp RPAR  &kp PIPE  &kp BSLH   &trans  &trans  &kp LS(MINUS)  &kp QUESTION  &kp GRAVE     &kp TILDE   &kp SQT     &none
+&none  &none     &none     &none     &trans    &trans                     &kp TILDE      &trans        &kp GRAVE     &none       &none       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
