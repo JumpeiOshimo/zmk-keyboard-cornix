@@ -135,26 +135,32 @@
         };
 
         // 1. USの「-」と「_」の組み合わせ
+
         us_min_under: us_min_under {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp LS(INT1)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // 2. USの「;」と「:」の組み合わせ
+
         us_semi_colon: us_semi_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SEMI>, <&kp SQT>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         // 3. USの「'」と「"」の組み合わせ
+
         us_quote_dquote: us_quote_dquote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N7)>, <&kp LS(N2)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -214,10 +220,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E         &kp R        &kp T                             &kp Y      &kp U        &kp I      &kp O    &kp P     &kp MINUS
-&kp LCTRL       &kp A  &kp S  &kp LCTRL     &kp F        &kp G                             &kp H      &kp J        &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V        &kp B          &kp K_MUTE  &none  &kp N      &kp M        &kp COMMA  &kp DOT  &kp FSLH  &none
-&none           &none  &none  &kp LEFT_ALT  &lt 2 SPACE  &kp BACKSPACE                     &kp ENTER  &lt 1 SPACE  &kp ESC    &none    &gresc    &none
+&kp TAB         &kp Q  &kp W  &kp E         &kp R        &kp T                             &kp Y      &kp U        &kp I      &kp O    &kp P           &us_min_under
+&kp LCTRL       &kp A  &kp S  &kp LCTRL     &kp F        &kp G                             &kp H      &kp J        &kp K      &kp L    &us_semi_colon  &us_quote_dquote
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V        &kp B          &kp K_MUTE  &none  &kp N      &kp M        &kp COMMA  &kp DOT  &kp FSLH        &none
+&none           &none  &none  &kp LEFT_ALT  &lt 2 SPACE  &kp BACKSPACE                     &kp ENTER  &lt 1 SPACE  &kp ESC    &none    &gresc          &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -255,10 +261,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none  &kp EXCL  &kp LBKT  &kp HASH  &kp DLLR  &kp PRCNT                  &kp EQUAL     &kp LS(NUMBER_6)  &kp LS(SQT)   &kp LS(NUMBER_8)     &kp LS(NUMBER_9)  &none
-&none  &none     &none     &none     &none     &none                      &kp MINUS     &kp LS(MINUS)     &kp RBKT      &kp NON_US_HASH      &kp INT3          &kp LS(EQUAL)
-&none  &none     &none     &none     &none     &none      &trans  &trans  &kp LS(INT1)  &kp LS(SEMI)      &kp LS(RBKT)  &kp LS(NON_US_HASH)  &kp LS(INT3)      &kp LS(LBKT)
-&none  &none     &none     &none     &trans    &trans                     &kp TILDE     &trans            &kp GRAVE     &none                &none             &none
+&none  &kp EXCL  &kp LBKT  &kp HASH       &kp DLLR        &kp PRCNT                  &kp EQUAL     &kp LS(NUMBER_6)  &kp LS(SQT)   &kp LS(NUMBER_8)     &kp LS(NUMBER_9)  &none
+&none  &none     &none     &kp COMMA      &kp PERIOD      &none                      &kp MINUS     &kp LS(MINUS)     &kp RBKT      &kp NON_US_HASH      &kp INT3          &kp LS(EQUAL)
+&none  &none     &none     &kp LS(COMMA)  &kp LS(PERIOD)  &none      &trans  &trans  &kp LS(INT1)  &kp LS(SEMI)      &kp LS(RBKT)  &kp LS(NON_US_HASH)  &kp LS(INT3)      &kp LS(LBKT)
+&none  &none     &none     &none          &trans          &trans                     &kp TILDE     &trans            &kp GRAVE     &none                &none             &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
