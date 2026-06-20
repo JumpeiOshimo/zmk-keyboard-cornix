@@ -134,135 +134,28 @@
             quick-tap-ms = <200>;
         };
 
-        // [数字行のズレ修正]
-        // US 2 / @
-
-        us_at: us_at {
+        // 1. USの「-」と「_」の組み合わせ
+        us_min_under: us_min_under {
             compatible = "zmk,behavior-mod-morph";
-            label = "US_AT";
             #binding-cells = <0>;
-            bindings = <&kp N2>, <&kp LBKT>;
-
+            bindings = <&kp MINUS>, <&kp LS(INT1)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        // US 6 / ^
-
-        us_caret: us_caret {
+        // 2. USの「;」と「:」の組み合わせ
+        us_semi_colon: us_semi_colon {
             compatible = "zmk,behavior-mod-morph";
-            label = "US_CARET";
-            #binding-cells = <0>;
-            bindings = <&kp N6>, <&kp EQUAL>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // US 7 / &
-
-        us_amp: us_amp {
-            compatible = "zmk,behavior-mod-morph";
-            label = "US_AMP";
-            #binding-cells = <0>;
-            bindings = <&kp N7>, <&kp LS(N6)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // US 8 / *
-
-        us_asterisk: us_asterisk {
-            compatible = "zmk,behavior-mod-morph";
-            label = "US_ASTERISK";
-            #binding-cells = <0>;
-            bindings = <&kp N8>, <&kp LS(SQT)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // US 9 / (
-
-        us_lparen: us_lparen {
-            compatible = "zmk,behavior-mod-morph";
-            label = "US_LPAREN";
-            #binding-cells = <0>;
-            bindings = <&kp N9>, <&kp LS(N8)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // US 0 / )
-
-        us_rparen: us_rparen {
-            compatible = "zmk,behavior-mod-morph";
-            label = "US_RPAREN";
-            #binding-cells = <0>;
-            bindings = <&kp N0>, <&kp LS(N9)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // [右側記号キーのズレ修正]
-        // US - / _
-
-        us_minus: us_minus {
-            compatible = "zmk,behavior-mod-morph";
-            label = "US_MINUS";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp LS(INT_RO)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // US = / +
-
-        us_equal: us_equal {
-            compatible = "zmk,behavior-mod-morph";
-            label = "US_EQUAL";
-            #binding-cells = <0>;
-            bindings = <&kp LS(MINUS)>, <&kp LS(SEMI)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // US ' / "
-
-        us_quote: us_quote {
-            compatible = "zmk,behavior-mod-morph";
-            label = "US_QUOTE";
-            #binding-cells = <0>;
-            bindings = <&kp LS(N7)>, <&kp LS(N2)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // US ` / ~
-
-        us_grave: us_grave {
-            compatible = "zmk,behavior-mod-morph";
-            label = "US_GRAVE";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LBKT)>, <&kp LS(EQUAL)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        us_semi: us_semi {
-            compatible = "zmk,behavior-mod-morph";
-            label = "US_SEMI";
             #binding-cells = <0>;
             bindings = <&kp SEMI>, <&kp SQT>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        // 2. ホールドでShift（&kp）、タップで先ほどのmod-morph（&morph_bkt）を呼び出す挙動
-
-        ht_shift_bkt: hold_tap_shift_bracket {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&morph_bkt>;
+        // 3. USの「'」と「"」の組み合わせ
+        us_quote_dquote: us_quote_dquote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N7)>, <&kp LS(N2)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
