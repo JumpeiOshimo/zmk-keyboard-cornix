@@ -221,8 +221,8 @@
 
             bindings = <
 &kp TAB         &kp Q  &kp W  &kp E         &kp R        &kp T                                 &kp Y      &kp U        &kp I          &kp O        &kp P           &us_min_under
-&kp LEFT_SHIFT  &kp A  &kp S  &kp D         &kp F        &kp G                                 &kp H      &kp J        &kp K          &hm RCTRL L  &us_semi_colon  &us_quote_dquote
-&kp LCTRL       &kp Z  &kp X  &kp C         &kp V        &kp B    &kp LS(CAPSLOCK)  &kp TILDE  &kp N      &kp M        &kp COMMA      &kp DOT      &kp FSLH        &kp BACKSPACE
+&kp LCTRL       &kp A  &kp S  &kp D         &kp F        &kp G                                 &kp H      &kp J        &kp K          &hm RCTRL L  &us_semi_colon  &us_quote_dquote
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V        &kp B    &kp LS(CAPSLOCK)  &kp TILDE  &kp N      &kp M        &kp COMMA      &kp DOT      &kp FSLH        &kp BACKSPACE
 &none           &none  &none  &kp LEFT_ALT  &lt 2 SPACE  &kp ESC                               &kp ENTER  &lt 1 SPACE  &kp RIGHT_GUI  &none        &gresc          &none
             >;
 
