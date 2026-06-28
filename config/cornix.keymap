@@ -220,10 +220,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E         &kp R        &kp T                                 &kp Y      &kp U        &kp I          &kp O        &kp P           &us_min_under
-&kp LCTRL       &kp A  &kp S  &kp D         &kp F        &kp G                                 &kp H      &kp J        &kp K          &hm RCTRL L  &us_semi_colon  &us_quote_dquote
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V        &kp B    &kp LS(CAPSLOCK)  &kp TILDE  &kp N      &kp M        &kp COMMA      &kp DOT      &kp FSLH        &kp BACKSPACE
-&mo 4           &none  &none  &kp LEFT_ALT  &lt 2 SPACE  &kp ESC                               &kp ENTER  &lt 1 SPACE  &kp RIGHT_GUI  &none        &gresc          &none
+&kp TAB         &kp Q         &kp W  &kp E         &kp R        &kp T                                 &kp Y      &kp U        &kp I          &kp O        &kp P           &us_min_under
+&kp LCTRL       &kp A         &kp S  &kp D         &kp F        &kp G                                 &kp H      &kp J        &kp K          &hm RCTRL L  &us_semi_colon  &us_quote_dquote
+&kp LEFT_SHIFT  &kp Z         &kp X  &kp C         &kp V        &kp B    &kp LS(CAPSLOCK)  &kp TILDE  &kp N      &kp M        &kp COMMA      &kp DOT      &kp FSLH        &kp BACKSPACE
+&bt BT_CLR_ALL  &bt BT_SEL 0  &none  &kp LEFT_ALT  &lt 2 SPACE  &kp ESC                               &kp ENTER  &lt 1 SPACE  &kp RIGHT_GUI  &none        &gresc          &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -343,6 +343,15 @@
 &none       &none         &none         &none         &none         &none                         &none        &none  &none   &none  &none  &none
 &none       &none         &none         &none         &none         &bootloader   &trans  &trans  &bootloader  &none  &none   &none  &none  &none
 &none       &none         &none         &none         &none         &none                         &none        &none  &kp N7  &none  &none  &none
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
